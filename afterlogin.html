@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container
+       {
+        display:grid;
+        grid-template-columns: 1fr 7fr; 
+        grid-template-rows: 1fr 15fr;
+        justify-content:center;
+       
+       }
+       .box1
+       {
+        height:800px;
+        width:100%;
+        padding:5px;
+        grid-row-start:1;
+        grid-row-end:3;
+        border-right: 4px solid rgba(0, 0, 0, 0.137);
+        display:grid;
+        grid-template-rows: 1.5fr 0.5fr 0.5fr 0.5fr 0.5fr  0.5fr 0.5fr 4.5fr ;
+        padding:2px;
+       }
+       .box12
+       {
+        height:75%;
+        width:60%;
+        background-image:url("wp8601613.jpg");
+       }
+       .box3
+       {
+        
+        width:100%;
+        background-image:url("doctor-strange\ edit.jpg");
+        opacity: 0.9;
+        padding:5px;
+        display:grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+       }
+       .box31
+       {
+        position fixed;
+        width:70%;
+        background-color:white;
+        opacity:1;
+        padding:5px;
+        display:grid;
+        border-radius:15px;
+        margin:50px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+       }
+       .box32
+       {
+        position fixed;
+        width:70%;
+        background-color:rgb(255, 255, 255);
+        opacity:1;
+        padding:5px;
+        display:grid;
+        border-radius:15px;
+        margin:50px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+       }
+       
+       
+       .box2
+       {
+        position fixed;
+        width:75%;
+        background-color:rgba(62, 56, 56, 0.086);
+        margin:4px 0px 8px 8px;
+        border:2px white;
+        box-shadow: 4px,2px,2px,2px rgb(123, 0, 255);
+    
+       }
+       
+       .box11
+       {
+        width:90%;
+        background-color:rgb(255, 255, 255);
+        padding:5px;
+        display:grid;
+        align-items: center;
+        
+       }
+       .box11:hover
+       {
+        width:90%;
+        background-color:rgba(124, 124, 124, 0.215);
+        padding:5px;
+        display:grid;
+        align-items: center;
+        
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box1" id="b1">
+            <div class="box12"></div>
+            <div class="box11">NAME</div>
+            <div ></div>
+            <div class="box11">HOME</div>
+            <div class="box11">ABOUT</div>
+            <div class="box11">STRANGE</div>
+            <div class="box11">CONTACT US</div>
+
+        </div>
+        <div class="box2" id="b2">box2
+        </div>
+
+        <div class="box3" id="b3"><div class="box31">box3.1</div>
+        <div class="box32">box3.2</div>
+        </div>
+    </div>
+</body>
+</html>
