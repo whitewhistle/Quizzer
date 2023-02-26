@@ -37,7 +37,7 @@
         
         width:100%;
         background-image:url("doctor-strange\ edit.jpg");
-        opacity: 0.9;
+        opacity: 1;
         padding:5px;
         display:grid;
         grid-template-rows: 1fr 1fr;
@@ -56,6 +56,10 @@
         margin:50px;
         grid-column-start: 1;
         grid-column-end: 3;
+        grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr;
+
        }
        .box32
        {
@@ -69,17 +73,48 @@
         margin:50px;
         grid-column-start: 1;
         grid-column-end: 3;
+        grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr;
        }
-       
+      
+       .box311
+            {
+             width:auto;
+             max-height: min-content;
+             background-color:rgb(255, 255, 255);
+             opacity:1;
+             padding:0px;
+             display:grid;
+             border-radius:0px;
+             margin:0px;
+             justify-items:center;
+             align-items: center;
+             grid-column-start: 1;
+             grid-column-end: 3;
+            }
+            .box312
+            {
+             width:auto;
+             max-height: min-content;
+             background-color:rgb(255, 255, 255);
+             opacity:1;
+             padding:0px;
+             display:grid;
+             border-radius:0px;
+             margin:0px;
+             grid-column-start: 1;
+             grid-column-end: 3;
+            }
+      
        
        .box2
        {
-        position fixed;
         width:75%;
         background-color:rgba(62, 56, 56, 0.086);
         margin:4px 0px 8px 8px;
         border:2px white;
-        box-shadow: 4px,2px,2px,2px rgb(123, 0, 255);
+        box-shadow: 4px,2px,2px,2px rgba(123, 0, 255, 0.367);
     
        }
        
@@ -89,7 +124,7 @@
         background-color:rgb(255, 255, 255);
         padding:5px;
         display:grid;
-        align-items: center;
+        align-content: center;
         
        }
        .box11:hover
@@ -98,8 +133,12 @@
         background-color:rgba(124, 124, 124, 0.215);
         padding:5px;
         display:grid;
-        align-items: center;
+        align-content: center;
         
+       }
+       input{
+        font-size:35px;
+        width:60%;
        }
     </style>
 </head>
@@ -116,12 +155,34 @@
             <div class="box11">CONTACT US</div>
 
         </div>
-        <div class="box2" id="b2">box2
+        <div class="box2" id="b2" 
+        style="font-size:25px">Welcome,Mr.Strange..
         </div>
 
-        <div class="box3" id="b3"><div class="box31">box3.1</div>
-        <div class="box32">box3.2</div>
+        <div class="box3" id="b3">
+         <div class="box31" style="font-size: 40px;" >
+            <div class="box311" >
+                     JOIN QUIZ
+            </div>
+            <div class="box312" >
+                <form >
+                    CODE:<input type="number" name="code" placeholder="enter join code" >
+                </form>      
+           
+            </div> 
+        </div>  
+        <div class="box32" style="font-size: 40px;">
+            <div class="box311">
+                     CREATE QUIZ
+            </div>
+            <div class="box312">
+                     
+            </div>  
+        </div>
         </div>
     </div>
 </body>
 </html>
+
+
+            
