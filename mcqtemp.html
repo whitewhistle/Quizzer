@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container
+       {
+        height:710px;
+        width:100%;
+        display:grid; 
+        grid-template-rows: 1fr 8fr 1.5fr;
+        grid-template-columns: 1fr 1fr;
+        justify-content:center;
+        background-color: rgba(0, 0, 0, 0.955);
+        color:antiquewhite;  
+       }
+
+       .box1
+       {
+        width:100%;
+        padding:3px;
+        border-bottom: 4px solid rgba(106, 31, 123, 0.137);
+        display:grid;
+        padding-top: 7px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        justify-content:center;
+        justify-items: center;
+        color:aliceblue;
+       }
+       
+       .box2
+       {
+        display:grid;
+        width:98%;
+        background-image: url("R.jpg");
+        border:2px rgba(255, 255, 255, 0.386);
+        grid-template-rows: 1.2fr 1fr;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        border-radius: 10px;
+        justify-self: center;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 5px;
+       }
+
+       .box3
+       { 
+        width:100%;
+        background-image:url("doctor-strange\ edit.jpg");
+        opacity: 1;
+        padding:5px;
+        display:grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;   
+       }
+       
+       .box21
+       {
+        padding:5px;
+        display:grid;
+        justify-content: center;
+        align-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+       }
+       .box22
+       {
+        width:98%;
+        display:grid;
+        justify-self: center;
+            justify-content:space-evenly;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-column-start: 1;
+        grid-column-end: 3;
+        grid-gap:10px ;
+        
+        
+       }
+       .box221
+       {
+        width:100%;
+        display:grid;
+            background-color: lightpink;
+            justify-content:space-evenly;
+            border-radius: 15px;
+            grid-row-start: 1;
+        grid-row-end: 3;
+       }
+       .box222
+       {
+        width:100%;
+        display:grid;
+            background-color:lightgreen;
+            justify-content:space-evenly;
+            border-radius: 15px;
+            grid-row-end: 3;
+            grid-row-start: 1;
+  
+       }
+       .box223
+       {
+        width:100%;
+        display:grid;
+            background-color: lightskyblue;
+            justify-content:space-evenly;
+            border-radius: 15px;
+            grid-row-end: 3;
+            grid-row-start: 1;
+
+       }
+       .box224
+       {
+        width:100%;
+        display:grid;
+            background-color: lightyellow;
+            justify-content:space-evenly;
+            border-radius: 15px;
+            grid-row-end: 3;
+            grid-row-start: 1;
+     
+       }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box1" id="b1">
+        timer
+        </div>
+        <div class="box2">
+            <div class="box21" id="b2" 
+            style="font-size:25px">Welcome,Mr.Strange..
+            </div>
+    
+            <div class="box22" id="b3">
+            <div class="box221">
+             1
+            </div>
+            <div class="box222">
+            2
+            </div>
+            <div class="box223">
+            3
+            </div>
+            <div class="box224">
+              4
+            </div>
+    
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
