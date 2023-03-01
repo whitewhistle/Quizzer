@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    .container
+       {
+        height:710px;
+        width:100%;
+        display:grid; 
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        justify-content:center;
+        background-color: rgba(0, 0, 0, 0.94);
+        color:rgb(0, 0, 0);  
+       }
+
+       .box1
+       {
+        width:98%;
+        padding:3px;
+        border-bottom: 4px solid rgba(106, 31, 123, 0.137);
+        display:grid;
+        padding-top: 7px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        justify-content:center; 
+        color:aliceblue;
+        font-size:20px;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        
+       }  
+       .box11{
+        background-color:rgb(201, 186, 17);
+        border:4px solid white;
+        border-radius: 10px;
+        width:100%;
+        color:black;
+        grid-column-start: 1;
+        grid-column-end: 3;
+       }
+       .box21
+       {
+        grid-column-start: 1;
+        grid-column-end: 3;
+       }
+
+
+       .box2
+       {
+        display:grid;
+        width:98%;
+        background-image: url("wp4565927.jpg");
+        background-position: center;
+        background-size:cover;
+        border:2px rgba(255, 255, 255, 0.386);
+        grid-template-rows: 1.2fr 1fr;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        border-radius: 10px;
+        justify-self: center;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 5px;
+       }
+
+       .box3
+       { 
+        width:100%;
+        background-image:url("doctor-strange\ edit.jpg");
+        opacity: 1;
+        padding:5px;
+        display:grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;   
+       }
+       
+       .box21
+       {
+        padding:5px;
+        display:grid;
+        justify-content: center;
+        align-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: ;
+       }
+       .box22
+       {
+        width:98%;
+        display:flexbox;
+        justify-self: center;
+            padding: 5px;
+            justify-content:space-evenly;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-column-start: 1;
+        grid-column-end: 3;
+        grid-gap:10px;
+        
+        
+       }
+       #b3{
+        width:100%;
+        display:grid;   
+            justify-content:space-evenly;
+            border-radius: 15px;
+            grid-row-end: 3;
+            grid-row-start: 1;
+            font-size: 20px;
+  
+       }
+       .box221
+       {
+            background-color:rgba(0, 255, 255, 0.818);    
+       }
+       .box222
+       {
+            background-color:rgba(230, 27, 0, 0.807);    
+       }
+       .box223
+       {
+            background-color: rgba(30, 255, 0, 0.763);
+       }
+       .box224
+       {
+            background-color: rgba(128, 0, 255, 0.73);   
+       }
+       #time{
+        margin: 5px;;
+        font-size:20px;
+        color: rgb(255, 255, 255);
+        animation: blinker 2s linear infinite;
+       }
+       @keyframes blinker{
+        50%{
+            opacity:0.5;
+        }
+       }
+       
+       @keyframes slide {
+        from {
+            margin-left: 95%;
+        }
+        to {
+            margin-left: 0%;
+        }
+    }
+       #anime
+       {
+        animation-name:slide;
+        animation-duration: 10s;
+        animation-delay:1s;
+        animation-timing-function: ease-in;
+        animation-direction:normal;
+        animation-fill-mode: backwards;
+       }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box1" >
+            <div class="box11">   
+                <div id="anime" style="background-color: black;"> c </div>
+            </div>
+            <div class="box12">
+                <a>time remaining:
+                </a>
+                <a id="time">00:min</a>
+                <a id="time">00:sec</a>  
+            </div>
+        </div>
+        <div class="box2">
+            <div class="box21" id="b2" 
+            style="font-size:25px">Question to be printed here
+            </div>
+    
+            <div class="box22">
+            <div class="box221" id="b3">
+             Option 1
+            </div>
+            <div class="box222" id="b3">
+             Option 2
+            </div>
+            <div class="box223" id="b3">
+            Option 3
+            </div>
+            <div class="box224" id="b3">
+              Option 4
+            </div>
+    
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
