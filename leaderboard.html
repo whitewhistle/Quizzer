@@ -1,50 +1,68 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merienda+One" />
+    <link href="https://fonts.cdnfonts.com/css/chiller" rel="stylesheet">
     <style>
         body
         {
             height:700px;
+            background-image: url("istockphoto-1290801796-612x612.jpg");
+            background-size:cover ;
             background-color: rgb(67, 8, 138);
+            display:grid ;
+            grid-template-columns: 1fr 1fr;
         }
         .container
         {   
+            font-family:"Chiller",sans-serif ;
             display:grid;
-            justify-self:center;
+            justify-self: center;
             justify-content: center;
+            
             align-self: center;
             align-content: center;
             margin-top: 100px;
-            grid-template-rows:60px 60px 60px 60px 60px 60px;
-            grid-template-columns: 300px 300px;
+            grid-template-rows:60px 60px 60px 60px 60px 60px 60px 60px;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            min-width:600px;
+
         }
         .header
         {   background-color: rgba(240, 248, 255, 0);
             display:grid;
-            width:100%;
+            width:130%;
             align-content: center;
             justify-self: center;
             grid-column-start: 1;
             grid-column-end: 3;
             grid-template-columns:1fr 10fr 3fr ;
             color:white;
+            
+            font-family: 'Merienda One';
+                                                
         }
         .row
         {   background-color: rgba(240, 248, 255, 0.195);
             border-radius: 5px;
             align-content: center;
-            width: 100%;
+            width: 130%;
             color:white;
+            font-family: 'Merienda One';
             margin:5px;
             display:grid;
             grid-column-start: 1;
             justify-self: center;
             grid-column-end: 3;
             grid-template-columns:1fr 10fr 3fr ;
+            
+                                                
         }
 
     </style>
@@ -75,17 +93,23 @@
 
         </div>
         <div class="row">
-        fds
+        2
         </div>
         <div class="row">
-            fds
+            3
             </div>
             <div class="row">
-                fds
+                4
                 </div>
                 <div class="row">
-                    fds
-                    </div>    
+                    5
+                    </div>   
+                    <div class="row">
+                        6
+                        </div>
+                        <div class="row">
+                            7
+                            </div> 
     </div>
 </body>
 </html>
