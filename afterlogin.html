@@ -63,7 +63,7 @@
        }
        .box32
        {
-        position fixed;
+        
         width:70%;
         background-color:rgb(255, 255, 255);
         opacity:1;
@@ -75,6 +75,8 @@
         grid-column-end: 3;
         grid-template-rows: 1fr 1fr;
             justify-content: center;
+            justify-items: center;
+            
             grid-template-columns: 1fr 1fr;
        }
       
@@ -140,6 +142,38 @@
         font-size:35px;
         width:60%;
        }
+       .btn
+       {
+        font-size:30px;
+        background-color:rgba(115, 10, 236, 0.983);
+        border-radius:15px;
+        color: aliceblue;
+        justify-self: center;
+        text-align: center;
+        height:40px;
+        width:20%;
+        border:5px solid rgba(255, 255, 255, 0.699);
+       }
+       .btn:hover{
+        cursor:pointer;
+       }
+       .btn1{
+        font-size:30px;
+        background-color:rgba(115, 10, 236, 0.983);
+        border-radius:15px;
+        color: aliceblue;
+        justify-self: center;
+        text-align: center;
+        height:50px;
+        width:100%;
+        border:5px solid rgba(255, 255, 255, 0.699);
+       }
+       .btn1:hover{
+        cursor:pointer;
+       }
+       @media (max-width:768px){
+        
+       }
     </style>
 </head>
 <body>
@@ -162,21 +196,23 @@
         <div class="box3" id="b3">
          <div class="box31" style="font-size: 40px;" >
             <div class="box311" >
-                     JOIN QUIZ
+                     Want to Join a QUIZ?
             </div>
             <div class="box312" >
                 <form >
-                    CODE:<input type="number" name="code" placeholder="enter join code" >
-                </form>      
+                    CODE:<input type="number" name="code" placeholder="Enter join code" >
+                </form>  
+                <buttton class="btn"> GO</buttton>    
            
             </div> 
         </div>  
         <div class="box32" style="font-size: 40px;">
             <div class="box311">
-                     CREATE QUIZ
+                     Want to Create a QUIZ?
             </div>
+            
             <div class="box312">
-                     
+                <button class="btn1">Create QUIZ</button>
             </div>  
         </div>
         </div>
@@ -184,5 +220,3 @@
 </body>
 </html>
 
-
-            
