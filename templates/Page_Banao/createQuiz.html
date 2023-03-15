@@ -1,0 +1,139 @@
+{% load static %}   
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link href="{% static 'css/addquiz.css' %}" rel="stylesheet">  
+		<script src="{% static '/js/addquiz.js' %}" type="text/javascript"></script>     
+		<title>Quizzer</title>
+	</head>
+	<body>
+		<div class="nav_bar">
+			<h2>QUIZZER</h2>
+			<div class="user_name" onclick="toggle_dropdown()">
+				
+			</div>
+			<div class="dd_wrapper" id="dropdown">
+				<button onclick="toDashboard()">Dashboard</button>
+				<button>Profile</button>
+				<hr />
+				<button onclick="signOut()">Sign Out</button>
+			</div>
+		</div>
+		<div class="root">
+			<form id="addQuizForm" action="createQuiz/" method="POST">
+				{% csrf_token %}
+				<div>
+					<h1>CREATE QUIZ</h1>
+					<input
+						class="one_tb"
+						type="text"
+						name="quiz_title"
+						placeholder="Title"
+						required
+					/>
+					
+					<input
+						class="two_tb"
+						style="margin: 0px 36px 0px 80px"
+						type="number"
+						name="duration"
+						placeholder="Duration in Minutes"
+						required
+					/>
+					<input
+						class="two_tb"
+						type="number"
+						name="max_marks"
+						placeholder="Max Marks"
+						required
+					/>
+					
+					
+				</div>
+				<div class="question_options">
+					<select id="questype" name="ques_type" form="type form">
+						<option value="mcq">MCQ</option>
+						<option value="fill">FILL UP</option>
+						<option value="num">NUMERICAL</option>
+					</select>
+					
+					<label for="quetion">Question : </label>
+					<span
+						id="delete_btn"
+						class="material-icons"
+						onclick="deleteQuestion(this)"
+						>delete</span
+					>
+					<input
+						class="question"
+						type="text"
+						name="question"
+						required
+					/>
+					<label for="mark">Mark(s) : </label>
+					<input
+						class="question"
+						type="number"
+						style="width: 100px"
+						name="mark"
+						required
+					/>
+					<br />
+					<label for="options">Options : </label><br />
+					<input
+						class="checks"
+						type="radio"
+						name="option_1"
+						required
+					/>
+					<input
+						class="txt_field"
+						style="margin: 4px 16px 0 0"
+						type="text"
+						name="option_1"
+						required
+					/>
+					<input class="checks" type="radio" name="option_1" />
+					<input
+						class="txt_field"
+						type="text"
+						name="option_2"
+						required
+					/>
+					<input class="checks" type="radio" name="option_1" />
+					<input
+						class="txt_field"
+						style="margin-right: 16px"
+						type="text"
+						name="option_3"
+						required
+					/>
+					<input class="checks" type="radio" name="option_1" />
+					<input
+						class="txt_field"
+						type="text"
+						name="option_4"
+						required
+					/>
+				</div>
+			</form>
+			<div class="addquiz_btns">
+				<button type="button" onclick="addQuestion()">
+					ADD QUESTION
+				</button>
+				<button type="submit" form="addQuizForm">SUBMIT</button>
+			</div>
+		</div>
+	</body>
+</html>

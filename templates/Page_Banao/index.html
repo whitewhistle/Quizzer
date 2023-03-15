@@ -1,0 +1,385 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"></div>
+    <h3>Message:</h3>{{message}}
+    <button type="button" class="close" aria-label="Close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+    
+    {% endfor %}
+
+    <h1> Hey Welcome Quizzers! </h1>
+
+    {% if user.is_authenticated %}
+    <h3> Hello {{fname}} </h3>
+    <h4>You are successfully loged in</h4>
+
+    <button type="submit" name="signout" value="signout"><a href="/signout"><h3>SignOut</h3> </a></button>
+    {% else %}
+    <button type="submit" name="login" value="login"><a href="/login"><h3>Login</h3></a></button><br>
+    <button type="submit" name="signup" value="signup"><a href="/signup"><h3> SignUp</h3></a></button> <br>
+    {% endif %}
+</body>
+</html>
+-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-image: url("{% static 'Page_Banao/doctor-strange edit.jpg' %}");
+            height: 1000px;
+            font-family: 'Bree Serif';
+            color: white
+        }
+
+
+
+
+        header {
+            border-bottom: 3px solid rgba(255, 255, 255, 0.401);
+            background-color: rgba(192, 20, 255, 0.334)
+        }
+
+
+        .left {
+            display: inline-block;
+            position: absolute;
+            left: 30px;
+            top: 10px;
+            color: aliceblue
+        }
+
+        .icon {
+            display: block;
+            position: absolute;
+            left: 90px;
+            top: 10px;
+        }
+
+
+
+
+        .mid {
+            display: block;
+            width: 90%;
+            margin: 1px 0px auto auto;
+            padding: 1px 0px 0px 0px;
+
+        }
+
+        .right {
+            display: inline-block;
+            position: absolute;
+            right: 30px;
+            top: 24px;
+            color: aliceblue;
+        }
+
+        .navbar li {
+            display: inline-block;
+        }
+
+        .navbar li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 22px;
+            padding: 34px 23px;
+        }
+
+        .navbar li a:hover {
+            color: rgb(164, 164, 164);
+            text-decoration: underline;
+        }
+
+        .btn {
+            margin: 1px;
+            background-color: black;
+            color: rgb(255, 255, 255);
+            padding: 2px 10px;
+            border: 2px solid white;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .btn2 {
+            margin: 9px 29px;
+            background-color: rgba(25, 253, 0, 0.132);
+            color: rgb(255, 255, 255);
+            padding: 2px 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .btn2:link {
+            color: rgb(255, 255, 255);
+        }
+
+        .btn3 {
+            margin: 4px;
+            width: 100%;
+            color: rgb(0, 0, 0);
+            padding: 2px 20px;
+            border: 2px solid rgba(0, 0, 0, 0.349);
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .container {
+            border: 2px solid rgba(255, 255, 255, 0.163);
+            background-color: rgba(0, 0, 0, 0.382);
+            margin: 150px 50px;
+            padding: 20px 20px;
+            width: 30%;
+            border-radius: 20px;
+            font-size: 22px;
+            color: aliceblue
+        }
+
+        .modal_c {
+            width: 100%;
+            height: 110%;
+            pointer-events: none;
+            margin: -700px 0px 0px 0px;
+            display: grid;
+            opacity: 0;
+            background: rgba(0, 103, 50, 0.8);
+            transition: all 250ms ease;
+
+        }
+
+        .modal_c2 {
+            width: 100%;
+            height: 110%;
+            pointer-events: none;
+            margin: -700px 0px 0px 0px;
+            display: grid;
+            opacity: 0;
+            background: rgba(0, 103, 50, 0.8);
+            transition: all 250ms ease;
+
+        }
+
+        .modal {
+            width: 400px;
+            height: 400px;
+            justify-self: center;
+            align-self: center;
+            position: relative;
+            background: rgb(255, 255, 255);
+            border: 2px solid #ffffff;
+            padding: 20px;
+            box-shadow: 0px 0px 50px 5px rgb(0, 189, 91);
+            border-radius: 20px;
+        }
+
+        .modal2 {
+            width: 350px;
+            height: 350px;
+            position: relative;
+            align-self: center;
+            justify-self: center;
+            background: rgb(255, 255, 255);
+            border: 2px solid #fffefe;
+            padding: 20px;
+            box-shadow: 0px 0px 50px 5px rgb(0, 189, 91);
+            border-radius: 20px;
+        }
+
+        .modal_h {
+            box-sizing: border-box;
+            width: 100%;
+            display: block;
+            height: 60px;
+            margin-bottom: 0px;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.385);
+
+        }
+
+        input {
+            margin-top: 7.5px;
+            margin-bottom: 7.5apx;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            height: 50px;
+            border: 0px;
+            font-family: georgia;
+            font-size: 11pt;
+            text-align: center;
+        }
+
+        .modal_c:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal_c2:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="border">
+
+
+            <div class="left">
+                <img src="{% static 'Page_Banao/wp8601613.jpg' %}" ; height="48px" ; width="60px">
+                <div style="color:aliceblue"></div>
+            </div>
+            <div class="icon" style="color:aliceblue;font-size:12px;">
+                <div>
+                    THE
+                </div>
+                <div>
+                    QUIZZER
+                </div>
+                <div>
+                    SUPREME
+                </div>
+            </div>
+            <div class="mid">
+                <ul class="navbar">
+                    <li><a href="*">Home </a></li>
+                    <li><a href="*">About </a></li>
+                    <li><a href="*">Strange </a></li>
+
+                </ul>
+            </div>
+            <div class="right">
+                <button class="btn">call</button>
+                <button class="btn">email</button>
+                <button class="btn"><a href="/user_input.html">Create Quiz</a></button>
+
+            </div>
+        </div>
+    </header>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"></div>
+    <h3>Message:</h3>{{message}}
+    <button type="button" class="close" aria-label="Close" data-dismiss="alert"><span
+            aria-hidden="true">&times;</span></button>
+
+    {% endfor %}
+
+
+    <div class="container">
+
+        {% if user.is_authenticated %}
+        <h3> Hello {{fname}} </h3>
+        <h4>You are successfully loged in</h4>
+
+        <button type="submit" name="signout" value="signout"><a href="/signout">
+                <h3>SignOut</h3>
+            </a></button>
+
+        {% else %}
+        <button class="btn2" type="submit" name="login" value="login"><a href="#modal">
+                <h3>Login</h3>
+            </a></button><br>
+        <button class="btn2" type="submit" name="signup" value="signup"><a href="#modal2">
+                <h3> SignUp</h3>
+            </a></button> <br>
+
+        {% endif %}
+
+        You think you know how the world works? You think that this material universe is all there is?
+        What is real? This universe is only one of an infinite number. Worlds without end.
+        Some benevolent and life-giving. Who are you in this vast Multiverse?Are you ready to become the next quizer
+        supreme Mr.Strange?
+        <br>
+
+
+    </div>
+
+    <div class="modal_c" id="modal">
+        <div class="modal">
+            <a href="#">X</a>
+            <span class="modal_h">
+                LOG-IN
+            </span>
+            <form action="login" method="POST">
+                {% csrf_token %}
+                <label for="username"> username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your UserName" required>
+                <br>
+                <label for="pass1">password</label>
+                <input type="password" id="pass1" name="pass1" placeholder="Enter Password" required>
+                <br>
+                <button type="submit">LOGIN</button><br>
+            </form>
+            <div style="text-align: center;
+            font-size:30px;color:grey">(OR)</div>
+            <button class="btn3">Login with Google</button>
+            <button class="btn3">Login with channeli</button>
+        </div>
+    </div>
+
+    <div class="modal_c2" id="modal2">
+        <div class="modal2">
+            <a href="#">X</a>
+            <span class="modal_h">
+                SIGN-UP
+            </span>
+
+            <form action="sign-up" method="POST">
+                {% csrf_token %}
+                <label for="username"> username</label>
+                <input type="text" id="username" name="username" placeholder="Alpha-numeric only" required>
+                <br>
+                <label for="fname"> firstname</label>
+                <input type="text" id="fname" name="fname" placeholder="Enter Your FirstName" required>
+                <br>
+                <label for="lname">lastname</label>
+                <input type="text" id="lname" name="lname" placeholder="Enter Your LastName" required>
+                <br>
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required>
+                <br>
+                <label for="pass1">password</label>
+                <input type="password" id="pass1" name="pass1" placeholder="Enter Password" required>
+                <br>
+                <label for="pass2">confirm-password</label>
+                <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" required>
+                <br>
+                <button type="submit">Sign Up</button><br>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
