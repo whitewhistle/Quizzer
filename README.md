@@ -45,13 +45,28 @@ FRONTEND
       *)we added a drop down box for the user to select the type of question
       
   BACKEND:
-      Yusuf:Django,Java script
-      a)log in signup
-                *)integrated a login and sign up modals with database
-      
-      b)problems faced:
-                Not able to connect channeli with login sign up
-                not able to create a lobby for players to wait after joining a quiz
-                not able to fetch data from datbase for leaderboard using model.py
-                not able to allow users to create quiz using model.py
+      Yusuf: Django
+      a) Login and Signup:
+      1>In Home page, before authentication,login and sign-up options are provided to the user.When signing in, user enters his/her credential 
+        and after verification of all the fields,user credentials are stored in the database.
+        Future commit:To enable user to signin with google/channel i using OAuth 2.0 
+        
+       b)Create Quiz:After user is authenticated,we enabled 2 options i.e Create Quiz and Join Quiz in the navbar.
+                    "Create quiz" redirects user to a form, where it fills the question attributes like type,marks,question-text etc.
+                     There are 2 modals namely Quiz and Questions and quiz id is stored in Quiz. For a unique quiz id,separate class for questions
+                     is created and questions (default numbering from 1) are stored there for future retrival.
+                     The lobby/Quiz template url are connected with unique question id.
+                     After completion of quiz making, the creater/teacher is provided with three options namely "Submit",
+                     "generate code" and "start quiz"(used to redirect students from lobby to quiz template).
+                     
+       c)Join Quiz:User after clicking redirects to a modal with feild"Enter Code", if code matches , User is redirected to the lobby.
+                   User can also attempt pre-build quiz on some of the listed topics by clicking "Practise".
+                   
+       d)Leaderbord(Future Commit):Every user details like 'marked correct' and 'time taken' are stored in db via django modals and 
+                    calculations are made using a pre-build formula and according leaderboard is updated.
+                    
+       Many of the above stated fields are under devlopment and will be unabled through future commits.
+                     
+                    
+       
       
