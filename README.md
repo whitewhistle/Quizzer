@@ -45,5 +45,13 @@ FRONTEND
       *)we added a drop down box for the user to select the type of question
       
   BACKEND:
+      Yusuf:Django,Java script
+      a)log in signup
+                *)integrated a login and sign up modals with database
       
+      b)problems faced:
+                Not able to connect channeli with login sign up
+                not able to create a lobby for players to wait after joining a quiz
+                not able to fetch data from datbase for leaderboard using model.py
+                not able to allow users to create quiz using model.py
       
